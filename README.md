@@ -26,9 +26,9 @@
 | Colum               | Type    | Options                       |
 | --------------------| ------- | ----------------------------- |
 | name                | string  | null: false                   |
-| price               | string  | null: false                   |
+| price               | integer | null: false                   |
 | rede_id             | integer | null: false                   |
-| status_id           | string  | null: false                   |
+| status_id           | integer | null: false                   |
 | derivery_charge_id  | integer | null: false                   |
 | derivery_source_id  | integer | null: false                   |
 | derivery_days_id    | integer | null: false                   |

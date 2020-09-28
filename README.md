@@ -16,29 +16,34 @@
 
 ### Association
 - has_many :items 
+- has_many :orders
 
 
 
 
 ## items
 
-| Colum           | Type    | Options                        |
-| ----------------| ------- | ------------------------------ |
-| item_name       | string  | null: false                    |
-| price           | string  | null: false                    |
-| item_rede       | text    | null: false                    |
-| item_status     | string  | null: false                    |
-| derivery_charge | integer  | null: false                   |
-| derivery_source | integer  | null: false                   |
-| derivery_days   | integer  | null: false                   |
-| user_id         | integer | null: false,foreign_key: true  |
-| category_id     | integer | null: false                    |
+| Colum               | Type    | Options                       |
+| --------------------| ------- | ----------------------------- |
+| name                | string  | null: false                   |
+| price               | integer | null: false                   |
+| rede_id             | integer | null: false                   |
+| status_id           | integer | null: false                   |
+| derivery_charge_id  | integer | null: false                   |
+| derivery_source_id  | integer | null: false                   |
+| derivery_days_id    | integer | null: false                   |
+| user_id             | integer | null: false,foreign_key: true |
+| category_id         | integer | null: false                   |
 
 ### Association
 
 - belongs_to user
 - belongs_to_active_hash :category
-- has_many :images
+- belongs_to_active_hash :status
+belongs_to_active_hash : derivery_charge
+belongs_to_active_hash : derivery_source
+belongs_to_active_hash :derivery_days
+- has_one :order
 
 
 
@@ -47,7 +52,7 @@
 | Colum          | Type    | Options                        |
 | -------------- | --------| ------------------------------ |
 | post_code      | string  | null: false                    |
-| prefecture     | string  | null: false                    |
+| prefecture_id  | integer | null: false                    |
 | city           | string  | null: false                    |
 | adress         | string  | null: false                    |
 | building_name  | string  |                                |
@@ -56,7 +61,7 @@
 
 ### Association
 
-belongs_to :user
+belongs_to :order
 
 
 ## orders   
@@ -69,6 +74,6 @@ belongs_to :user
 
 - belongs_to :user
 - belongs_to :item
-- has_one : destinations
+- has_one : destination
 
 
